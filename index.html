@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ravi Sherpa | Casino Breach</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #00ff99;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif');
+      opacity: 0.03;
+    }
+
+    .dollar {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      color: #00ff99;
+      opacity: 0.3;
+      animation: fall linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .terminal {
+      position: relative;
+      z-index: 2;
+      background-color: #1a1a1a;
+      border: 2px solid #00ff99;
+      padding: 30px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 20px #00ff99;
+      border-radius: 10px;
+    }
+
+    .line {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #00ff99;
+      animation: typing 3s steps(40, end), blink .7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #00ff99; }
+    }
+
+    .button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #00ff99;
+      color: #000;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.1s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #00cc77;
+    }
+
+    .button:active {
+      transform: scale(0.96);
+      background-color: #00aa66;
+    }
+  </style>
+</head>
+<body>
+  <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+  <div class="noise"></div>
+  <div id="dollar-container"></div>
+  <div class="terminal">
+    <div class="line">root@ravi_sherpa:/terminal# launching program...</div>
+    <br>
+    <div class="line">[✔] Connected to casino server</div>
+    <div class="line">[✔] Algorithms synchronized</div>
+    <div class="line">[✔] Security bypass active</div>
+    <br>
+    <div class="line">📡 Anonymity mode enabled</div>
+    <br>
+    <div class="line">🎯 Stable 99.9% winrate</div>
+    <div class="line">🕵️ Undetectable by casino systems</div>
+    <div class="line">⚡ Instant access to the private version</div>
+    <br>
+    <a href="https://t.me/Sherpa_moneybot" target="_blank" class="button" onclick="playClickSound()">🔐 GET THE PROGRAM</a>
+    <br>
+    <a href="https://emre-app-euhg.glide.page" target="_blank" class="button" onclick="playClickSound()">🤖 ACTIVATE BOT</a>
+  </div>
+
+  <script>
+    function playClickSound() {
+      const sound = document.getElementById('click-sound');
+      sound.currentTime = 0;
+      sound.play();
+    }
+
+    function createDollar() {
+      const dollar = document.createElement('div');
+      dollar.classList.add('dollar');
+      dollar.innerText = '$';
+      dollar.style.left = Math.random() * 100 + 'vw';
+      dollar.style.animationDuration = (3 + Math.random() * 5) + 's';
+      document.getElementById('dollar-container').appendChild(dollar);
+
+      setTimeout(() => {
+        dollar.remove();
+      }, 8000);
+    }
+
+    setInterval(createDollar, 100);
+  </script>
+</body>
+</html>
