@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ravi Sherpa | Casino Breach</title>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1084739127021336');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1084739127021336&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <style>
     body {
       background-color: #0f0f0f;
@@ -120,7 +137,7 @@
     <div class="line">🕵️ Undetectable by casino systems</div>
     <div class="line">⚡ Instant access to the private version</div>
     <br>
-    <a href="https://t.me/Sherpa_moneybot" target="_blank" class="button" onclick="playClickSound()">🔐 GET THE PROGRAM</a>
+    <a href="https://t.me/Ravi_sherpa_bot?start=link_QxphO7SgUp" target="_blank" class="button" onclick="trackLead(); playClickSound();">🔐 GET THE PROGRAM</a>
     <br>
     <a href="https://emre-app-euhg.glide.page" target="_blank" class="button" onclick="playClickSound()">🤖 ACTIVATE BOT</a>
   </div>
@@ -146,6 +163,12 @@
     }
 
     setInterval(createDollar, 100);
+
+    function trackLead() {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+      }
+    }
   </script>
 </body>
 </html>
